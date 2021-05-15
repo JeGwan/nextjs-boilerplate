@@ -1,5 +1,6 @@
 import Axios, { AxiosInstance } from "axios";
-import { parseCookies } from "./utils";
+import { GetServerSidePropsContext } from "next";
+import { parseCookies } from "./cookies";
 
 type ApiSuccessResponse<ResultType = {}> = {
   success: true;
@@ -18,9 +19,9 @@ let api: Api | undefined = undefined;
 
 class Api {
   private axios: AxiosInstance;
-  constructor(ctx?: any) {
+  constructor(ctx?: GetServerSidePropsContext) {
     const headers: any = { "Content-Type": "application/json" };
-    const token = parseCookies(ctx).token;
+    const token = parseCookies(ctx?.req).token;
     if (token) headers["Authorization"] = `Bearer ${token}`;
     this.axios = Axios.create({
       baseURL: process.env.END_POINT as string,

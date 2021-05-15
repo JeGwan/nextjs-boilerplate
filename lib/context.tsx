@@ -1,25 +1,12 @@
 import React, { createContext, ReactNode, useState, useEffect } from "react";
-import { message } from "antd";
 import { User } from "./types";
 import { getApi } from "./api";
-import { logout, parseCookies } from "./utils";
+import { parseCookies, removeTokenCookie } from "./cookies";
+import { TOKEN_NAME } from "./constants";
 
-type AppMessageFunction = (
-  content: string,
-  duration?: number,
-  onClose?: () => void
-) => void;
-
-interface AppMessage {
-  info: AppMessageFunction;
-  error: AppMessageFunction;
-  warn: AppMessageFunction;
-  success: AppMessageFunction;
-}
 interface AppContextType {
   me?: User | null;
   setMe: (me: User) => void;
-  appMessage: AppMessage;
 }
 interface AppContextProviderProps {
   children?: ReactNode;
@@ -27,71 +14,25 @@ interface AppContextProviderProps {
 export const AppContext = createContext<AppContextType>({
   me: undefined,
   setMe: () => {},
-  appMessage: {
-    info: () => {},
-    error: () => {},
-    success: () => {},
-    warn: () => {},
-  },
 });
 
 export const AppContextProvider = ({ children }: AppContextProviderProps) => {
   const [me, setMe] = useState<User | null>();
-  const [messageIds, setMessageIds] = useState<string[]>([]);
-  const method = (
-    name: "info" | "error" | "warn" | "success"
-  ): AppMessageFunction => {
-    return (content: string, duration?: number, onClose = () => {}) => {
-      if (!messageIds.some((messageId) => messageId === content)) {
-        setMessageIds([...messageIds, content]);
-        message[name](content, duration, () => {
-          setMessageIds(
-            messageIds.filter((messageId) => messageId !== content)
-          );
-          onClose();
-        });
-      }
-    };
-  };
-
-  const appMessage: AppMessage = {
-    info: method("info"),
-    error: method("error"),
-    warn: method("warn"),
-    success: method("success"),
-  };
 
   useEffect(() => {
-    if (!me) {
-      // 로그인 정보가 없을 때 할 동작.
-      const token = parseCookies().token;
+    if (me === undefined) {
+      const token = parseCookies()?.[TOKEN_NAME];
       if (token) {
-        const Api = getApi();
-        Api.get<{ me: User }>("/users/me")
-          .then(({ data }) => {
-            if (data.success) {
-              setMe(data.result.me);
-            } else {
-              location.href = "/logout";
-            }
-          })
-          .catch((error) => {
-            if (process.env.NODE_ENV !== "production") console.error(error);
-            logout();
-            appMessage.error(
-              "회원 정보를 가져올 수 없습니다. 다시 로그인 해주세요"
-            );
-            setMe(null);
-          });
+        // todo 로그인 처리 후 user 데이터 가져와서 setMe
+        setMe(null);
       } else {
+        // todo 로그인되지 않았을 때 redirect 하려면 여기
         setMe(null);
       }
     }
   }, []);
 
   return (
-    <AppContext.Provider value={{ me, setMe, appMessage }}>
-      {children}
-    </AppContext.Provider>
+    <AppContext.Provider value={{ me, setMe }}>{children}</AppContext.Provider>
   );
 };

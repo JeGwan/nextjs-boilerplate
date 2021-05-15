@@ -37,20 +37,7 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head>
-          {/* font 나눔스퀘어 */}
-          <link
-            rel="stylesheet"
-            type="text/css"
-            href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css"
-          />
-          {/* font montserrat */}
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap"
-            rel="stylesheet"
-          />
-        </Head>
+        <Head></Head>
         <body>
           <Main />
           <NextScript />

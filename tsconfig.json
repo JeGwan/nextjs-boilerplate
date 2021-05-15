@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es5",
     "module": "esnext",
     "jsx": "preserve",
-    "lib": ["dom", "es2017"],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "moduleResolution": "node",
     "allowJs": true,
     "noEmit": true,
@@ -22,9 +22,10 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["./components/*"],
+      "@styles/*": ["./styles/*"],
       "@lib/*": ["./lib/*"]
     }
   },
-  "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "exclude": ["node_modules", ".next"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"]
 }
