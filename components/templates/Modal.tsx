@@ -1,4 +1,4 @@
-import constants from "@styles/constants";
+import constants from "@app/styles/constants";
 import {
   CSSProperties,
   HTMLAttributes,
@@ -8,11 +8,11 @@ import {
 } from "react";
 import { createPortal } from "react-dom";
 import styled, { keyframes } from "styled-components";
-import Mask from "@components/atoms/Mask";
+import Mask from "@app/components/atoms/Mask";
 
 const modalAnimation = keyframes`
   0% {
-    transform: scale(0.5);
+    transform: scale(0.7);
     opacity:0;
   }
   100% {
@@ -28,7 +28,7 @@ const ModalComp = styled(Mask)`
   & > .modal {
     display: flex;
     flex-direction: column;
-    animation: ${modalAnimation} 0.4s ease-in-out forwards;
+    animation: ${modalAnimation} 0.2s ease-in-out forwards;
     & > .modal-header {
       position: relative;
       display: flex;

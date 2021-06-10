@@ -1,5 +1,5 @@
-import { classNames } from "@lib/utils";
-import constants from "@styles/constants";
+import { classNames } from "@app/lib/utils";
+import constants from "@app/styles/constants";
 import { ButtonHTMLAttributes } from "react";
 import styled from "styled-components";
 

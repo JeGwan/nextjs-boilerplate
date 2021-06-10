@@ -1,4 +1,4 @@
-import { hexToRgb } from "@lib/utils";
+import { hexToRgb } from "@app/lib/utils";
 
 const primary = "#0050ff";
 const primaryAlpha = `rgb(${hexToRgb(primary).join(" ")} / 20%)`;

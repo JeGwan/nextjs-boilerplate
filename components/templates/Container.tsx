@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { CSSProperties, HTMLAttributes, ReactNode } from "react";
 import styled from "styled-components";
-import { APP_NAME } from "@lib/constants";
+import { APP_NAME } from "@app/lib/constants";
 
 const Wrapper = styled.div``;
 interface Props extends HTMLAttributes<HTMLDivElement> {

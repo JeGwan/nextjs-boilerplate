@@ -72,6 +72,7 @@ const GlobalStyle = createGlobalStyle`
   footer,
   header,
   hgroup,
+  main,
   menu,
   nav,
   output,
@@ -105,14 +106,34 @@ const GlobalStyle = createGlobalStyle`
   nav,
   section,
   main {
-    box-sizing: border-box;
     display: block;
+  }
+
+  a,
+  button,
+  select,
+  input,
+  label,
+  textarea {
+    appearance: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
   }
 
   html {
     // 1rem = 10px
     font-size: 10px;
     line-height: 1.6;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, Lato, Roboto, "Segoe UI",
+      "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
+    // 모달이 열릴 경우 스크롤 막기 위해
+    font-size: 1.6rem;
+    &.modal-open {
+      overflow: hidden;
+    }
   }
 
   ol,
@@ -136,23 +157,6 @@ const GlobalStyle = createGlobalStyle`
   table {
     border-collapse: collapse;
     border-spacing: 0;
-  }
-
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, Lato, Roboto, "Segoe UI",
-      "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
-    // 모달이 열릴 경우 스크롤 막기 위해
-    font-size: 1.6rem;
-    &.modal-open {
-      overflow: hidden;
-    }
-  }
-
-  button,
-  input,
-  select {
-    outline: none;
-    -webkit-tap-highlight-color: transparent;
   }
 
   p {

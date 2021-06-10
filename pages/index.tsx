@@ -1,7 +1,7 @@
-import Button from "@components/atoms/Button";
-import Alert from "@components/organisms/Alert";
-import Container from "@components/templates/Container";
-import Modal from "@components/templates/Modal";
+import Button from "@app/components/atoms/Button";
+import Alert from "@app/components/organisms/Alert";
+import Container from "@app/components/templates/Container";
+import Modal from "@app/components/templates/Modal";
 import { GetServerSideProps } from "next";
 import { useState } from "react";
 import styled from "styled-components";

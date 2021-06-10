@@ -1,4 +1,4 @@
-import Button from "@components/atoms/Button";
+import Button from "@app/components/atoms/Button";
 import {
   CSSProperties,
   HTMLAttributes,
@@ -8,7 +8,7 @@ import {
 } from "react";
 import { createPortal } from "react-dom";
 import styled, { keyframes } from "styled-components";
-import Mask from "@components/atoms/Mask";
+import Mask from "@app/components/atoms/Mask";
 
 const alertAnimation = keyframes`
   0% {
