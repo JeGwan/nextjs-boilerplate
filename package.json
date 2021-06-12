@@ -6,7 +6,8 @@
     "build": "next build",
     "start": "next start",
     "pre": "yarn install --production=false",
-    "analyze": "ANALYZE=true next build"
+    "analyze": "ANALYZE=true next build",
+    "test": "jest"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.1",
@@ -20,14 +21,28 @@
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
-    "@types/cookie": "^0.4.0",
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/user-event": "^13.1.9",
+    "@types/jest": "^26.0.22",
     "@types/node": "^14.14.10",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^16.9.8",
     "@types/styled-components": "^5.1.4",
-    "babel-plugin-import": "^1.13.3",
+    "@typescript-eslint/eslint-plugin": "^4.14.2",
+    "@typescript-eslint/parser": "^4.14.2",
+    "babel-jest": "^26.6.3",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-plugin-styled-components": "^1.12.0",
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-react": "^7.19.0",
+    "husky": "^4.2.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.3",
+    "jest-watch-typeahead": "^0.6.1",
+    "lint-staged": "^10.0.10",
+    "prettier": "^2.0.2",
     "typescript": "^4.1.2",
     "webpack-bundle-analyzer": "^4.4.2"
   },

@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import styles from "./styles";
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -169,10 +170,10 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: #1b1b1b;
+    color: ${styles.colors.grey1};
     transition: color 0.3s;
     &:hover {
-      color: #0050ff;
+      color: ${styles.colors.primary};
     }
   }
 `;

@@ -1,4 +1,4 @@
-import constants from "@app/styles/constants";
+import styles from "@app/styles/styles";
 import {
   CSSProperties,
   HTMLAttributes,
@@ -37,7 +37,7 @@ const ModalComp = styled(Mask)`
       padding: 0 16px;
       height: 48px;
       font-size: 1.6rem;
-      background-color: ${constants.colors.primary};
+      background-color: ${styles.colors.primary};
       color: white;
       font-weight: bold;
       & > .modal-close {
@@ -45,9 +45,9 @@ const ModalComp = styled(Mask)`
         transition: all 0.3s;
         background-color: transparent;
         &:hover {
-          background-color: ${constants.colors.dark};
+          background-color: ${styles.colors.dark};
         }
-        background-image: url(${constants.assets.close});
+        background-image: url(${styles.assets.close});
         background-repeat: no-repeat;
         background-position: center;
         background-size: 16px;
@@ -74,10 +74,10 @@ const ModalComp = styled(Mask)`
     list-style: none;
     position: relative;
     width: 100%;
-    max-width: calc(${constants.mobileWidth}px - 100px);
-    @media screen and (max-width: ${constants.mobileWidth}px) {
+    max-width: calc(${styles.sizes.mobileWidth}px - 100px);
+    @media screen and (max-width: ${styles.sizes.mobileWidth}px) {
       height: 100%;
-      max-width: ${constants.mobileWidth}px;
+      max-width: ${styles.sizes.mobileWidth}px;
     }
   }
 `;

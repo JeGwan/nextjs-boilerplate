@@ -108,7 +108,11 @@ const Alert = ({
   if (!alertElement) return null;
   if (!visible && destroyOnClose) return null;
   return createPortal(
-    <Wrapper onClick={onClose} className={visible ? "visible" : "hidden"}>
+    <Wrapper
+      data-testid="mask"
+      onClick={onClose}
+      className={visible ? "visible" : "hidden"}
+    >
       <div className="alert" onClick={(e) => e.stopPropagation()} {...props}>
         <h2 className="alert-title">{title}</h2>
         <div className="alert-body" style={bodyStyle}>
