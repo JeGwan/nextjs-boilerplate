@@ -1,5 +1,3 @@
-const primary = "#0050ff";
-
 const styles = {
   sizes: {
     edgePadding: 16,
@@ -16,7 +14,7 @@ const styles = {
     lightest: "#BFDDFF",
     lighter: "#80AFFF",
     light: "#407EFF",
-    primary,
+    primary: "#0050ff",
     dark: "#0040C4",
     darker: "#003388",
     darkest: "#00234D",

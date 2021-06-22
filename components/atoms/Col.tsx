@@ -85,7 +85,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 const Col = ({ span = 24, style = {}, ...props }: Props) => {
   if (span < 1) span = 1;
   else if (span > 24) span = 24;
-  return <Wrapper className={`col-${span}`} style={style} {...props} />;
+  return <Wrapper className={`col col-${span}`} style={style} {...props} />;
 };
 
 export default Col;

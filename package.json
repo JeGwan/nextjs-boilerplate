@@ -14,7 +14,7 @@
     "axios": "^0.21.1",
     "cookie": "^0.4.1",
     "dayjs": "^1.10.4",
-    "next": "latest",
+    "next": "^11.0.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-redux": "^7.2.4",

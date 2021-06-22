@@ -12,6 +12,7 @@ const TextArea = styled.textarea`
   transition: border 0.3s;
   background-color: white;
   border: 1px solid ${styles.colors.grey7};
+  border-radius: 4px;
   &:hover {
     border: 1px solid ${styles.colors.primary};
   }

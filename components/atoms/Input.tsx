@@ -5,7 +5,7 @@ import styles from "@app/styles";
 const Input = styled.input`
   height: ${styles.sizes.uiHeight}px;
   font-size: 1.4rem;
-  border-radius: 0.4rem;
+  border-radius: 4px;
   padding: 0 ${styles.sizes.edgePadding}px;
   cursor: pointer;
   transition: all 0.3s;

@@ -18,7 +18,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "isolatedModules": false,
+    "isolatedModules": true,
     "baseUrl": ".",
     "paths": {
       "@app/*": ["./*"]
