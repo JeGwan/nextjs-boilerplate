@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import Container from "@app/components/templates/Container";
+import { LinkButton } from "@app/components/atoms/Button";
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -12,11 +13,8 @@ const Wrapper = styled.div`
     width: 100px;
     height: 100px;
   }
-  & > .buttons {
-    display: flex;
-    & > * {
-      margin: 0 4px;
-    }
+  & > h1 {
+    margin: 4px 0 8px;
   }
 `;
 
@@ -26,8 +24,7 @@ const Page = () => {
       <Wrapper>
         <img src="/assets/next-dot-js.svg" alt="" />
         <h1>👋 JeGwan's Next.js boilerplate</h1>
-        <p>작업을 한번 해볼까요.</p>
-        <p>API End point : {process.env.END_POINT}</p>
+        <LinkButton href="/uis">UI 둘러보기</LinkButton>
       </Wrapper>
     </Container>
   );
