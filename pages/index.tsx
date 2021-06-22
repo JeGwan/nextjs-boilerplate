@@ -1,10 +1,11 @@
+import { useState } from "react";
+import styled from "styled-components";
+
 import Button from "@app/components/atoms/Button";
 import Alert from "@app/components/organisms/Alert";
 import Container from "@app/components/templates/Container";
 import Modal from "@app/components/templates/Modal";
-import { GetServerSideProps } from "next";
-import { useState } from "react";
-import styled from "styled-components";
+
 const Wrapper = styled.div`
   min-height: 100vh;
   display: flex;
@@ -23,9 +24,7 @@ const Wrapper = styled.div`
   }
 `;
 
-interface HomePageProps {}
-
-const HomePage = (_props: HomePageProps) => {
+const Page = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [alertMessage, setAlertMessage] = useState<string>();
   return (
@@ -60,10 +59,4 @@ const HomePage = (_props: HomePageProps) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps<HomePageProps> = async (
-  ctx
-) => {
-  return { props: {} };
-};
-
-export default HomePage;
+export default Page;

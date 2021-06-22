@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import styles from "./styles";
+
+import styles from "./";
 
 const GlobalStyle = createGlobalStyle`
   html,

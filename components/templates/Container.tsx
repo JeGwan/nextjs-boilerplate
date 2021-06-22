@@ -1,34 +1,24 @@
 import Head from "next/head";
-import { CSSProperties, HTMLAttributes, ReactNode } from "react";
-import styled from "styled-components";
+import React, { ReactNode } from "react";
+
 import { APP_NAME } from "@app/lib/constants";
 
-const Wrapper = styled.div``;
-interface Props extends HTMLAttributes<HTMLDivElement> {
+interface Props {
   title?: string;
-  header?: ReactNode;
-  mainStyle?: CSSProperties;
   loading?: boolean;
+  children?: ReactNode;
 }
-const Container = ({
-  title,
-  children,
-  header,
-  mainStyle,
-  loading = false,
-  ...rest
-}: Props) => {
+const Container = ({ title, loading = false, children }: Props) => {
+  // 나중에 loading 사용법 고민
   return (
-    <Wrapper {...rest}>
+    <>
       <Head>
         <title>
-          {APP_NAME} {title ? ` : ${title}` : ""}
+          {APP_NAME} {title && ` : ${title}`}
         </title>
       </Head>
-      <header></header>
-      <main style={mainStyle}>{children}</main>
-      <footer></footer>
-    </Wrapper>
+      {children}
+    </>
   );
 };
 

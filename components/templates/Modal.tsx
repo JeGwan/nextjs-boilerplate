@@ -1,4 +1,3 @@
-import styles from "@app/styles/styles";
 import {
   CSSProperties,
   HTMLAttributes,
@@ -8,7 +7,9 @@ import {
 } from "react";
 import { createPortal } from "react-dom";
 import styled, { keyframes } from "styled-components";
+
 import Mask from "@app/components/atoms/Mask";
+import styles from "@app/styles";
 
 const modalAnimation = keyframes`
   0% {
