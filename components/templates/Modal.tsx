@@ -30,30 +30,43 @@ const ModalComp = styled(Mask)`
     display: flex;
     flex-direction: column;
     animation: ${modalAnimation} 0.2s ease-in-out forwards;
+    height: 80%;
+    background-color: white;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.85);
+    list-style: none;
+    position: relative;
+    width: 100%;
+    max-width: ${styles.sizes.mobileWidth - 100}px;
+    @media screen and (max-width: ${styles.sizes.mobileWidth}px) {
+      height: 100%;
+      max-width: ${styles.sizes.mobileWidth}px;
+    }
     & > .modal-header {
       position: relative;
       display: flex;
+      box-sizing: content-box;
       align-items: center;
-      flex: 0 0 48px;
+      flex: 0 0 ${styles.sizes.headerHeight}px;
       padding: 0 16px;
-      height: 48px;
+      height: ${styles.sizes.headerHeight}px;
       font-size: 1.6rem;
-      background-color: ${styles.colors.primary};
-      color: white;
+      color: ${styles.colors.grey1};
+      border-bottom: 1px solid ${styles.colors.grey7};
       font-weight: bold;
       & > .modal-close {
         cursor: pointer;
         transition: all 0.3s;
         background-color: transparent;
         &:hover {
-          background-color: ${styles.colors.dark};
+          background-color: ${styles.colors.grey6};
         }
         background-image: url(${styles.assets.close});
         background-repeat: no-repeat;
         background-position: center;
-        background-size: 16px;
-        height: 48px;
-        width: 48px;
+        background-size: 12px;
+        height: ${styles.sizes.headerHeight}px;
+        width: ${styles.sizes.headerHeight}px;
         position: absolute;
         top: 0;
         right: 0;
@@ -67,18 +80,6 @@ const ModalComp = styled(Mask)`
       flex-direction: column;
     }
     & > .modal-footer {
-    }
-    height: 80%;
-    background-color: white;
-    box-sizing: border-box;
-    color: rgba(0, 0, 0, 0.85);
-    list-style: none;
-    position: relative;
-    width: 100%;
-    max-width: calc(${styles.sizes.mobileWidth}px - 100px);
-    @media screen and (max-width: ${styles.sizes.mobileWidth}px) {
-      height: 100%;
-      max-width: ${styles.sizes.mobileWidth}px;
     }
   }
 `;
