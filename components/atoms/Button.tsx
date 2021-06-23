@@ -29,12 +29,17 @@ const Wrapper = styled.button`
     display: block;
     width: 100%;
   }
+  &.outlined {
+    background-color: white;
+    border: 1px solid ${styles.colors.grey1};
+  }
+  &.transparent {
+    background-color: transparent;
+  }
   &:hover {
-    color: ${styles.colors.grey1};
     background-color: ${styles.colors.grey8};
   }
   &:active {
-    color: ${styles.colors.grey1};
     background-color: ${styles.colors.grey7};
   }
   &.primary {
@@ -45,17 +50,6 @@ const Wrapper = styled.button`
     }
     &:active {
       background-color: ${styles.colors.darker};
-    }
-  }
-  &.outlined {
-    background-color: white;
-    color: ${styles.colors.grey1};
-    border: 1px solid ${styles.colors.grey1};
-    &:hover {
-      background-color: ${styles.colors.grey9};
-    }
-    &:active {
-      background-color: ${styles.colors.grey8};
     }
   }
   &:disabled {
@@ -71,7 +65,7 @@ const Wrapper = styled.button`
 `;
 
 interface ButtonAugmentedProps {
-  type?: "primary" | "default" | "outlined";
+  type?: "primary" | "default" | "outlined" | "transparent";
   htmlType?: "button" | "submit" | "reset";
   size?: "small" | "medium";
 }
