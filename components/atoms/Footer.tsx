@@ -18,7 +18,7 @@ const Footer = styled.footer`
     height: 100%;
     display: flex;
     align-items: center;
-    border-top: 1px solid ${styles.colors.grey7};
+    border-top: 1px solid ${styles.colors.grey9};
     background-color: white;
   }
 `;

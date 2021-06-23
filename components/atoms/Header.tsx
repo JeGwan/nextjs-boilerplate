@@ -18,7 +18,7 @@ const Header = styled.header`
     height: 100%;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid ${styles.colors.grey7};
+    border-bottom: 1px solid ${styles.colors.grey9};
     background-color: white;
     & > .title {
       font-size: 1.8rem;

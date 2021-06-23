@@ -10,7 +10,7 @@ const Input = styled.input`
   cursor: pointer;
   transition: all 0.3s;
   background-color: white;
-  border: 1px solid ${styles.colors.grey6};
+  border: 1px solid ${styles.colors.grey8};
   box-shadow: none;
   &.full {
     display: block;
@@ -32,7 +32,7 @@ const Input = styled.input`
     background-color: #eee;
   }
   &::placeholder {
-    color: ${styles.colors.grey6};
+    color: ${styles.colors.grey8};
   }
 `;
 

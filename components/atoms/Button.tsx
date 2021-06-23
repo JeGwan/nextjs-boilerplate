@@ -8,13 +8,14 @@ import styles from "@app/styles";
 const Wrapper = styled.button`
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   min-height: ${styles.sizes.uiHeight}px;
   padding: 0 ${styles.sizes.edgePadding}px;
   font-size: 1.4rem;
   font-family: sans-serif;
   font-weight: bold;
   color: ${styles.colors.grey1};
-  background-color: ${styles.colors.grey7};
+  background-color: ${styles.colors.grey9};
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -30,11 +31,11 @@ const Wrapper = styled.button`
   }
   &:hover {
     color: ${styles.colors.grey1};
-    background-color: ${styles.colors.grey6};
+    background-color: ${styles.colors.grey8};
   }
   &:active {
     color: ${styles.colors.grey1};
-    background-color: ${styles.colors.grey5};
+    background-color: ${styles.colors.grey7};
   }
   &.primary {
     background-color: ${styles.colors.primary};
@@ -51,20 +52,20 @@ const Wrapper = styled.button`
     color: ${styles.colors.grey1};
     border: 1px solid ${styles.colors.grey1};
     &:hover {
-      background-color: ${styles.colors.grey7};
+      background-color: ${styles.colors.grey9};
     }
     &:active {
-      background-color: ${styles.colors.grey6};
+      background-color: ${styles.colors.grey8};
     }
   }
   &:disabled {
-    background-color: ${styles.colors.grey7};
-    color: ${styles.colors.grey6};
+    background-color: ${styles.colors.grey9};
+    color: ${styles.colors.grey8};
     &:hover {
-      background-color: ${styles.colors.grey7};
+      background-color: ${styles.colors.grey9};
     }
     &:active {
-      background-color: ${styles.colors.grey7};
+      background-color: ${styles.colors.grey9};
     }
   }
 `;

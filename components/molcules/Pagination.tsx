@@ -9,6 +9,10 @@ const Wrapper = styled.div`
   margin-top: 12px;
   & > button {
     margin: 0 4px;
+    &.btn-number {
+      width: 44px;
+      padding: 0;
+    }
   }
 `;
 
@@ -38,17 +42,17 @@ const Pagination = ({
   }
   return (
     <Wrapper>
-      {currentPage !== 1 && (
-        <Button
-          onClick={() => onPageChange(currentPage - 1)}
-          className="btn-before"
-          size={buttonSize}
-        >
-          이전
-        </Button>
-      )}
+      <Button
+        onClick={() => onPageChange(currentPage - 1)}
+        className="btn-before"
+        size={buttonSize}
+        disabled={currentPage <= 1}
+      >
+        이전
+      </Button>
       {pages.map((page, i) => (
         <Button
+          className="btn-number"
           onClick={() => onPageChange(page)}
           type={page === currentPage ? "primary" : "default"}
           key={i}
@@ -57,15 +61,14 @@ const Pagination = ({
           {page}
         </Button>
       ))}
-      {endPage !== totalPages && (
-        <Button
-          onClick={() => onPageChange(currentPage + 1)}
-          className="btn-next"
-          size={buttonSize}
-        >
-          다음
-        </Button>
-      )}
+      <Button
+        onClick={() => onPageChange(currentPage + 1)}
+        className="btn-next"
+        size={buttonSize}
+        disabled={currentPage >= totalPages}
+      >
+        다음
+      </Button>
     </Wrapper>
   );
 };

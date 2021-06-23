@@ -28,7 +28,7 @@ const Select = styled.select`
     border-color: ${styles.colors.primary};
   }
   &.placeholder {
-    color: ${styles.colors.grey6};
+    color: ${styles.colors.grey8};
   }
 `;
 

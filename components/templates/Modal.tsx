@@ -52,14 +52,14 @@ const ModalComp = styled(Mask)`
       height: ${styles.sizes.headerHeight}px;
       font-size: 1.6rem;
       color: ${styles.colors.grey1};
-      border-bottom: 1px solid ${styles.colors.grey7};
+      border-bottom: 1px solid ${styles.colors.grey9};
       font-weight: bold;
       & > .modal-close {
         cursor: pointer;
         transition: all 0.3s;
         background-color: transparent;
         &:hover {
-          background-color: ${styles.colors.grey6};
+          background-color: ${styles.colors.grey8};
         }
         background-image: url(${styles.assets.close});
         background-repeat: no-repeat;

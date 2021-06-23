@@ -14,11 +14,23 @@ import Alert from "@app/components/organisms/Alert";
 import Container from "@app/components/templates/Container";
 import Modal from "@app/components/templates/Modal";
 import styles from "@app/styles";
+import Pagination from "@app/components/molcules/Pagination";
 
 const gridCols = [
   1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 4, 4, 4, 4, 6, 6, 8, 8, 8, 12, 12,
   10, 14, 24,
 ];
+
+const getFontColor = (name: string) => {
+  if (
+    name === "lightest" ||
+    name === "white" ||
+    name === "grey8" ||
+    name === "grey9"
+  )
+    return "black";
+  return "white";
+};
 
 const PageSection = styled.section`
   h2 {
@@ -34,17 +46,18 @@ const PageSection = styled.section`
   .col {
     & > div {
       width: 100%;
-      height: 100%;
+      height: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: ${styles.colors.grey7};
+      background-color: ${styles.colors.grey9};
     }
   }
 `;
 const Page = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [alertMessage, setAlertMessage] = useState<string>();
+  const [page, setPage] = useState(3);
   return (
     <Container title="Home">
       <Header>
@@ -112,6 +125,28 @@ const Page = () => {
               </Col>
             ))}
           </Row>
+          <h2>Colors</h2>
+          <Row gap={10}>
+            {Object.entries(styles.colors).map(([name, color], i) => (
+              <Col span={4} key={i}>
+                <div
+                  style={{
+                    backgroundColor: color,
+                    color: getFontColor(name),
+                  }}
+                >
+                  {name}
+                </div>
+              </Col>
+            ))}
+          </Row>
+          <h2>Pagination</h2>
+          <Pagination
+            currentPage={page}
+            numsPerPage={5}
+            total={100}
+            onPageChange={setPage}
+          />
         </PageSection>
       </Main>
       <Footer>
