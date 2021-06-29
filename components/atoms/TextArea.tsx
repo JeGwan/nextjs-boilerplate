@@ -7,7 +7,7 @@ const TextArea = styled.textarea`
   display: block;
   resize: none;
   outline: none;
-  font-size: 1.4rem;
+  font: inherit;
   padding: ${styles.sizes.edgePadding}px;
   transition: border 0.3s;
   background-color: white;
